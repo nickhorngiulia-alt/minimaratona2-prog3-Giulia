@@ -3,7 +3,7 @@ function solucao(){
     let vetor2 = document.querySelector("#vetor2").value.split(",").map(Number);
     let vetor = [];
     let percorrer = vetor1.length;
-    if (percorrer < vetor2.length){
+    if (percorrer > vetor2.length){
         percorrer = vetor2.length;
     }
     let i = 0;
@@ -23,6 +23,14 @@ function solucao(){
             i++;
             j++
         }
+    }
+    if (i < vetor1.length) {
+        let resto1 = vetor1.slice(i);
+        vetor = vetor.concat(resto1);
+    }
+    if (j < vetor2.length) {
+        let resto2 = vetor2.slice(j);
+        vetor = vetor.concat(resto2);
     }
     document.querySelector("#saida").innerHTML = vetor;
 }
